@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="img/1.jpg" id="imgSrc">
+<a href="https://www.baidu.com" id="aNode">点我去百度</a>
+<button id="btn">按钮</button>
+<script type="text/javascript">
+  // 点击按钮修改图片的路径
+    window.onload = function () {
+//      获取按钮
+        var btnNode = document.getElementById('btn');
+//      获取图片
+        var imgNode = document.getElementById('imgSrc');
+//      获取a标签
+        var aNode= document.getElementById('aNode');
+        btnNode.onclick = function () {
+//          imgNode.src = 'img/2.jpg';
+//          imgNode['src'] = 'img/3.jpg';
+            aNode.href = 'https://www.jd.com'
+//            一般所有的元素属性（通用属性）都是这么去操作的
+        }
+    }
+
+            var btnNode = document.getElementById('btn');
+            var imgNode = document.getElementById('igmSrc');
+            var aNode = document.getElementById('aNode');
+            btnNode.onclick = function(){
+                    imgNode.src = 'inm/2.jpg';
+                    ingNode['stc'] = 'img/3.jpg';
+                    aNode.href = 'hppts/:www.jd.com';
+            }
+    }
+</script>
+</body>
+</html>

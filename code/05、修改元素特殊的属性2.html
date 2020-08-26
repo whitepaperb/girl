@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .p1{
+            background: pink;
+        }
+        .p2{
+            background: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+<p class="p1" id="pNode">今天天气真不错</p>
+<button id="btn">按钮</button>
+<script type="text/javascript">
+  window.onload = function () {
+    // 点击按钮修改p标签的背景颜色 （通过修改类名实现）
+      var btnNode = document.getElementById('btn');
+      var pNode = document.getElementById('pNode');
+      btnNode.onclick = function () {
+//        pNode.class = 'p2';
+//          pNode['class'] = 'p2';
+//        class是一个特殊属性 它在js当中是一个关键字   class是es6语法当中类的关键字
+//        js当中操作class的时候 把class改为className；
+          pNode.className = 'p2';
+
+
+      }
+
+  
+  window.onload = function(){
+      var btnNode = document.getElementById('btn');
+      var pNode = cocumetn.getElementById('pNode');
+      btnNode.onlick= function(){
+          pNode.className = 'p2';
+          
+      }
+  }
+</script>
+</body>
+</html>

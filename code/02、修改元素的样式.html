@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            background: pink;
+            /*background-color: skyblue;*/
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script type="text/javascript">
+  //  点击div  让div的宽度变成300  高度变成300   背景颜色变成天蓝色
+    window.onload = function () {
+        var box = document.getElementById('box');
+        var w = 200;
+//      给div绑定单击事件
+        box.onclick = function () {
+            w+=50;
+//            console.log(box.style.width);
+            box.style.width = w + 'px';//如果行内没有样式 通过这种方式你就读取不到了
+            console.log(box.style.width);
+            box.style.height = '300px';//设置了行内样式之后，才能读取到；就算能读取我们也不会这样读
+//          如果通过js设置的样式带有中划线‘-’   则去掉中划线  改写小驼峰
+            box.style.backgroundColor = 'skyblue';
+        }
+//      js操作样式的时候，都是操作行内样式，只有行内样式权重最高，才能保证js后期操作的样式生效
+//      js如果一开始就读取某个元素的某个样式，是读取不道德，因为一开始没有设置行内样式
+//      所以我们一般情况下设置可以直接设置，但是读取后边我们会有另外的方法去读取
+//      因为js设置样式的这个特性还有并不是特别的方便，
+//      所以呢我们在设置比较复杂的样式时可以使用提前定义好的class
+
+    }
+</script>
+</body>
+</html>

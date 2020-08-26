@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            width: 150px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            background-color: pink;
+            float: left;border: 1px solid #ccc;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>遛狗</li>
+        <li>滑雪</li>
+        <li>唱歌</li>
+        <li>打鼓</li>
+    </ul>
+<script type="text/javascript">
+    window.onload = function () {
+//      获取li集合
+        var liNodes = document.querySelectorAll('li');
+//      循环事件绑定
+        for (var i = 0; i < liNodes.length; i++) {
+//            添加移入事件    onmouseover
+            liNodes[i].onmouseover = function () {
+//                console.log('移入')
+                this.style.backgroundColor = 'yellowgreen';
+            };
+//          添加移出事件 onmouseout
+            liNodes[i].onmouseout = function () {
+                this.style.backgroundColor = 'pink';
+            }
+
+        }
+    }
+</script>
+</body>
+</html>

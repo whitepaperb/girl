@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .p1{
+            background: pink;
+        }
+        .p2{
+            background: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <p class="p1" id="pNode" aa="bb">今天天气真不错</p>
+<script type="text/javascript">
+  // 元素的属性分为天生和自定义两种
+    window.onload = function () {
+      var pNode = document.getElementById('pNode');
+//      点击p标签 输出p标签aa属性的属性值
+        pNode.onclick = function () {
+//         如果操作的属性不是天生的，而是自定义的，那么通过点或者[]  都不能操作
+//            pNode.aa = 'cc';
+//          自定义属性需要通过getAttribute和setAttribute来操作
+//          setAttribute设置自定义属性 两个参数 参数1：要设置的属性名 参数2：要设置的属性值
+//            pNode.setAttribute('aa','cc');
+//          getAttribute读取自定义属性  一个参数：要读取的属性名称
+//            console.log(pNode.getAttribute('aa'));
+
+//          其实这两个方法不但可以操作自定义属性，天生的属性也可以操作，可以说这两个方法是万能的
+            console.log(pNode.className);//天生属性通过点来读取
+            console.log(pNode.getAttribute('class'));//天生属性也可以使用自定义属性的方法来获取
+//            pNode.className = 'p2';
+            pNode.setAttribute('class','p2');
+//          以后我们还是区分开来使用：天生属性就用点语法操作
+//          自定义属性采用getAttribute和setAttribute来操作
+        }
+    }
+    window.onload = function(){
+        var pNode = document.getElementById('pNode');
+        pNode.onclick = function(){
+            pNode.setAttribute('ss','aa');
+            pnode.getAttribute('ss');
+        }
+    }
+</script>
+</body>
+</html>

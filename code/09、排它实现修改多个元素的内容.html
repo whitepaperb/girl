@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="p1" class="pp">我是段落1</p>
+<p id="p2" class="pp">我是段落2</p>
+<p id="p3" class="pp">我是段落3</p>
+<p id="p4" class="pp">我是段落4</p>
+<script type="text/javascript">
+    // 1.点击任意的一个p，让所有的p标签内容变成 哈哈哈
+    window.onload = function () {
+//      获取所有的p标签
+        var pNodes = document.querySelectorAll('p');
+////      给每个p标签绑定单击事件    循环事件绑定
+//        for (var i = 0; i < pNodes.length; i++) {
+//            pNodes[i].onclick = function () {
+////              alert('我是通过循环绑定的单击事件')
+////                遍历p标签集合 让所有的p标签文本变成哈哈哈
+//                for (var j = 0; j < pNodes.length; j++) {
+//                    pNodes[j].innerHTML = '哈哈哈'
+//                }
+//            }
+//        }
+//        pNodes[0].onclick = function () {
+//            alert('我绑定了单击事件')
+//        };
+//        pNodes[1].onclick = function () {
+//            alert('我绑定了单击事件')
+//        };
+//        pNodes[2].onclick = function () {
+//            alert('我绑定了单击事件')
+//        };
+//        pNodes[3].onclick = function () {
+//            alert('我绑定了单击事件')
+//        };
+//       2.点击任何一个p，当前点击的这个p标签文本设置为哈哈哈，其余的设置为嘿嘿嘿
+        for (var i = 0; i < pNodes.length; i++) {
+//            循环事件绑定
+            pNodes[i].onclick = function () {
+//                排它思想
+//                第一步、让所有的全部变成嘿嘿嘿
+                for (var j = 0; j < pNodes.length; j++) {
+                    pNodes[j].innerHTML = '嘿嘿嘿';
+                }
+//                第二步、再把当前点击的这个p标签变成哈哈哈
+//                this在事件回调函数当中，代表发生事件的那个元素(dom对象)(一般就是事件源)
+                this.innerHTML = '哈哈哈';
+//              只要以后你们敢在事件回调函数当中直接使用外部for循环的循环变量 就会给你报错
+//              因为内部事件回调函数执行的时候，循环早就执行完了
+//                pNodes[i].innerHTML = '哈哈哈';
+            }
+        }
+        console.log(i)
+
+
+    } 
+    window.onload = function(){
+         var pNodes = document.querySelectorAll('p');
+         for(var i = 0; i < pNodes.length;i++){
+             pNodes.onclick = function(){
+                 for(var i = 0;i < pNodes.length;i++){
+                     pNodes[i].innerHTML = 'hehehe';
+
+                 }
+                 this.innereHTML = 'HAHAH'
+             }
+         }
+    }
+    window.onload = function(){
+        var c = document.querySelectorAll('sa')
+        for(var i = 0; i< sa.length;i++){
+            c[i].onmouseover=function(){
+               this.style.backgroundColor='green'
+            }
+            c[i].onmouseoutr=function(){
+               this.style.backgroundColor='yellow'
+            }
+
+        }
+    }
+//     实现小圆点高亮点击切换  通过类名实现
+</script>
+</body>
+</html>

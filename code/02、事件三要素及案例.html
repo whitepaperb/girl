@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+<script type="text/javascript">
+    //点击按钮 实现一个数字的自增
+    window.onload = function () {
+//      获取事件源
+        var btnNode = document.getElementById('btn');
+//      定义一个计数变量
+        var n = 0;
+//      给事件源添加对应的事件监听
+        btnNode.onclick = function () {
+//          当用户点击这个按钮时   就会执行这个按钮单击事件对应的回调函数
+            n++;
+            console.log(n);
+        }
+    }
+</script>
+</body>
+</html>

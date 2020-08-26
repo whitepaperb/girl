@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">今天天气真不错</div>
+<script type="text/javascript">
+    //getElementById   返回一个dom对象
+    var boxNode = document.getElementById('box');
+
+    boxNode.onclick = function () {
+        //    修改元素的标签体文本
+        boxNode.innerHTML = '这是我第一次操作页面元素'
+    }
+
+
+</script>
+</body>
+</html>

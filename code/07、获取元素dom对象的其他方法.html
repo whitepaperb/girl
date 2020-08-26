@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .pp{
+
+        }
+        #p4{
+
+        }
+    </style>
+</head>
+<body>
+<p id="p1" class="pp">我是段落1</p>
+<p id="p2" class="pp">我是段落2</p>
+<p id="p3" class="pp">我是段落3</p>
+<p id="p4" class="pp">我是段落4</p>
+<div class="box"></div>
+<script type="text/javascript">
+   //1.通过id获取单个元素的dom对象
+//    var pNode3 = document.getElementById('p3');
+//    2.通过标签名获取元素集合，它可以让我们获取到所有这个标签名字的元素dom对象
+//    返回的是一个伪数组   IE8以下不能用
+//    伪数组也叫类数组  本质是一个对象   可以通过索引取值  有长度属性
+//    var pNodes = document.getElementsByTagName('p');
+//    console.log(pNodes)
+//   这个伪数组里边存的是dom对象   伪数组本身并不能使用dom的属性或者方法
+   // 需要使用里边存储的dom来使用属性或者方法
+//       var arr = [1,2,3,4,5];
+//       arr[1]
+//    pNodes.className = 'test';
+//    console.log(pNodes[1]);
+//   3.通过类名去获取元素集合 它可以让我们获取到所有带有这个类的元素的dom对象集合
+//    返回一个伪数组  IE8 以下不能用
+//    var pList = document.getElementsByClassName('pp');
+//    console.log(pList);
+
+//  即使我们学习了这些方法，以后用的也不多，用的最多的是下面两个 IE8以下不支持
+//  querySelector和querySelectorAll 这两个方法也是可以让我们获取元素的dom对象的 而且比之前的方法都要灵活
+//  上面的方法 必须使用id值 标签名以及类名才能获取
+//  接下来要说的两个方法只需要通过选择器写法来获取
+//   如果获取一个元素  通过querySelector来获取
+    var pNode4 = document.querySelector('#p4');
+    console.log(pNode4)
+//   如果获取多个 通过querySelectorAll 来获取
+    var pNodes = document.querySelectorAll('.pp , .box');
+    console.log(pNodes);
+    var pNode4 = document.querySelector('<br>
+    ')
+    var pNodes = document.querySelectorAll('PP','box'
+    )
+
+
+</script>
+</body>
+</html>

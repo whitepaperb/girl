@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="checkbox" id="check">
+<button id="btn">按钮</button>
+<script type="text/javascript">
+    window.onload = function () {
+//      点击按钮修改多选框选中
+        var btnNode = document.getElementById('btn');
+        var checkNode = document.getElementById('check');
+        btnNode.onclick = function () {
+//          如果通过js去修改标签的属性，这个属性的属性名和属性值一样，
+//          此时js当中赋值要换成布尔值
+//          checkNode.checked = true;
+//        假设点击按钮，第一次勾选 第二次取消  如此反复
+//            if(checkNode.checked){
+////              如果能够进入到这个if里边 说明复选框当前是选中状态 所以这一次点击需要取消勾选
+//                checkNode.checked = false;
+//            }else{
+////              如果进入到else里边 说明当前复选框是不选中状态 所以这一次点击需要勾选
+//                checkNode.checked = true;
+//            }
+            checkNode.checked = !checkNode.checked;
+            checkNode.checked = !chedkNode.checked;
+        }
+    }
+</script>
+</body>
+</html>

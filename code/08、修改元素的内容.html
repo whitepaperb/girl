@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .p1{
+            /*display: none;*/
+            visibility: hidden;
+            /*
+                隐藏元素的方式
+                display:none;  不占位隐藏
+                visibility:hidden;  占位隐藏
+                opacity:0;
+                width:0;
+                height:0;
+                left:-1000000
+            */
+        }
+    </style>
+</head>
+<body>
+<p class="p1">北京下大雨了<span>下雨点吃点火锅吧</span></p>
+<script type="text/javascript">
+    // 点击p标签 修改p标签的内容
+    window.onload = function () {
+        var pNode = document.querySelector('p');
+        pNode.onclick = function () {
+//            console.log(pNode.innerHTML);//读取
+//            pNode.innerHTML = '<h2>听说还要下冰雹</h2>';
+
+//            console.log(pNode.innerText);
+            pNode.innerText = '<h2>听说还要下冰雹</h2>';
+        }
+//      设置内容的时候：如果内容当中包含标签字符串 innerHTML会让标签正常渲染有标签的特性，
+//      也就是说标签会在页面上生效
+//      innerText会把标签原样展示在页面上，不会让标签生效
+//      如果内容当中没有其他的标签  两个方式是一致的 都是设置文本内容
+
+//      读取内容的时候：如果标签内部还有其他标签，innerHTML会把标签内部带着的其他标签全部输出，
+//      如果内部还有其他标签，innerTest只会输出所有标签里面的内容 不会输出标签
+//      如果内部没有其他标签  他们两个一致  都是读取文本内容
+
+//      textContent与innerText的区别
+        console.log('textContent:'+pNode.textContent);//只有高级浏览器认识IE8以下不支持 但是隐藏的元素内容可以获取
+        console.log('innerText:'+pNode.innerText);//所有浏览器都认识  隐藏的元素内容获取不到
+//      这里所说的隐藏指的是占位隐藏   visibility:hidden
+    }
+</script>
+</body>
+</html>
